@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste produits!{% endblock %}
+
+{% block body %}
+{% if products %}
+ <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>article_id</th>
+        <th>Description</th>
+        <th>Prix unitaire</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for product in products %}
+      <tr>
+        <td>{{product.id}}</td>
+        <td> {{product.libelle}}</td>
+        <td> {{product.prix}}</td>
+
+        <td> <a href="{{path('detaiProd',{'id': product.id})}}" class="btn btn-success">Détail</a></td>
+      
+      </tr>
+      {% endfor %}
+   
+    </tbody>
+  </table>
+  {% else %}
+  <p> aucun article<p>
+  {% endif %}
+{% endblock %}

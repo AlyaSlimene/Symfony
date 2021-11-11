@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<h2> Détail article </h2>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Image</th>
+        <th>Description</th>
+        <th>Prix unitaire</th>
+      </tr>
+    </thead>
+    <tbody>
+    
+      <tr>
+        <td><img src="{{product.image}}"></td>
+        <td> {{product.libelle}} </td>
+        <td> {{product.prix}}</td>
+        <td> {{product.description}}</td>
+        
+      
+      </tr>
+   
+    </tbody>
+  </table>
+<a href="" class="btn btn-primary">Ajouter au panier</a>
+<a href="" class="btn btn-success">Mettre à jour</a>
+<a href="{{path('delProd',{'id':product.id})}}" class="btn btn-danger">Supprimer</a>
+
+
+{% endblock %}
